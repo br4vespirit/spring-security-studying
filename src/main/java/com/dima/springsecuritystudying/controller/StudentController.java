@@ -28,4 +28,9 @@ public class StudentController {
                         "Student " + studentId + " does not exists"
                 ));
     }
+
+    @GetMapping(path = "/hi")
+    public String greetAllStudents() {
+        return "Hello, students!";
+    }
 }
