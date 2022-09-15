@@ -28,6 +28,7 @@ public class ApplicationSecurityConfig {
         return http
                 .authorizeRequests()
                 .antMatchers("/api/v1/students/hi").permitAll()
+                .antMatchers("/api/**").hasRole(STUDENT.name())
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic()
@@ -37,13 +38,13 @@ public class ApplicationSecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user1 = User.builder()
-                .username("user1")
+                .username("anna")
                 .password(passwordEncoder.encode("pass1"))
                 .roles(STUDENT.name())
                 .build();
 
         UserDetails user2 = User.builder()
-                .username("user2")
+                .username("alex")
                 .password(passwordEncoder.encode("pass2"))
                 .roles(ADMIN.name())
                 .build();
