@@ -18,21 +18,25 @@ public class StudentManagementController {
 
     @GetMapping
     public List<Student> getAllStudents() {
+        System.out.println("GET");
         return STUDENTS;
     }
 
     @PostMapping
     public void insertStudent(@RequestBody Student student) {
+        System.out.println("POST");
         System.out.println(student);
     }
 
     @DeleteMapping( "{id}")
     public void deleteStudent(@PathVariable(name = "id") Integer studentId) {
+        System.out.println("DELETE");
         System.out.println(studentId);
     }
 
     @PutMapping("{id}")
     public void updateStudent(@PathVariable(name = "id") Integer studentId, @RequestBody Student student) {
+        System.out.println("PUT");
         System.out.println(studentId + " " + student);
     }
 }
