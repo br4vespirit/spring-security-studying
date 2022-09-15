@@ -9,7 +9,8 @@ import static com.dima.springsecuritystudying.security.UserPermission.*;
 
 public enum UserRole {
     STUDENT(Sets.newHashSet()),
-    ADMIN(Sets.newHashSet(COURSE_READ, COURSE_WRITE, STUDENT_READ, STUDENT_WRITE));
+    ADMIN(Sets.newHashSet(COURSE_READ, COURSE_WRITE, STUDENT_READ, STUDENT_WRITE)),
+    ADMIN_TRAINEE(Sets.newHashSet(COURSE_READ, STUDENT_READ));
 
     @Getter
     private final Set<UserPermission> permissions;
