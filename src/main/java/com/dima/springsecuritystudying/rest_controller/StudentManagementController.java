@@ -1,4 +1,4 @@
-package com.dima.springsecuritystudying.controller;
+package com.dima.springsecuritystudying.rest_controller;
 
 import com.dima.springsecuritystudying.model.Student;
 import org.springframework.security.access.prepost.PreAuthorize;
